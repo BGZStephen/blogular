@@ -4,29 +4,41 @@ const config = require('../config/database')
 
 // User Schema
 const UserSchema = mongoose.Schema({
+  articles: Array
+  createdAt: {
+    type: Number,
+  },
   email: {
     type: String,
+    lowercase: true,
     required: true
   },
   firstName: {
-    type: String
+    type: String,
+    required: true
   },
   lastName: {
-    type: String
+    type: String,
+    required: true
   },
   password: {
     type: String,
     required: true
   },
+  role: {
+    Type: String,
+    required: true
+  }
   userId: {
     type: Number,
+    index: true,
     required: true,
-    unique: true,
-    index: true
+    unique: true
   },
   username: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   }
 });
 

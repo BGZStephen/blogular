@@ -51,8 +51,9 @@ router.post("/authenticate", (req, res, next) => {
             message: "Authentication successful",
             token: "JWT" + token,
             user: {
-              userId: callback.userId,
               email: callback.email,
+              role: callback.role,
+              userId: callback.userId,
               username: callback.username
             }
           })
@@ -70,12 +71,15 @@ router.post("/create", (req, res, next) => {
 
   // newUser object to submit
   let newUser = new User({
+    email: req.body.email,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    role: "blogger",
+    username: req.body.username
   })
+
+  newUser.createdAt = new Date().getTime()
 
   // define counter to be called for assigning unique userID's
   let counter = {
@@ -210,12 +214,15 @@ router.post("/register", (req, res, next) => {
 
   // newUser object to submit
   let newUser = new User({
+    email: req.body.email,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    username: req.body.username,
-    email: req.body.email,
-    password: req.body.password
+    password: req.body.password,
+    role: "blogger",
+    username: req.body.username
   })
+
+  newUser.createdAt = new Date().getTime()
 
   // define counter to be called for assigning unique userID's
   let counter = {
@@ -270,10 +277,11 @@ router.post("/update", (req, res, next) => {
 
   // newUser object to submit
   let userObject = {
+    email: req.body.email,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
+    role: req.body.role,
     username: req.body.username,
-    email: req.body.email,
     userId: req.body.userId
   }
 
