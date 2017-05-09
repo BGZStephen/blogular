@@ -26,8 +26,8 @@ const UserSchema = mongoose.Schema({
     required: true
   },
   role: {
-    Type: String,
-    // required: true
+    type: String,
+    required: true
   },
   userId: {
     type: Number,
