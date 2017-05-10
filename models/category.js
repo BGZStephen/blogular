@@ -4,6 +4,7 @@ const config = require('../config/database')
 
 // User Schema
 const CategorySchema = mongoose.Schema({
+  articles: Array,
   categoryId: {
     type: Number,
     unique: true

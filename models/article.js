@@ -8,9 +8,17 @@ const ArticleSchema = mongoose.Schema({
     type: Number,
     unique: true
   },
-  categories: Array,
-  name: {
+  author: { // username
     type: String,
+  },
+  categories: Array,
+  comments: Array,
+  createdAt: {
+    type: Date,
+    required: true
+  },
+  createdBy: { // userId
+    type: Number,
     unique: true,
   },
   description: {
@@ -18,31 +26,27 @@ const ArticleSchema = mongoose.Schema({
   },
   title: {
     type: String,
-  },
-  userId: {
-    type: Number,
-    unique: true,
   }
 });
 
 const Article = module.exports = mongoose.model('Article', ArticleSchema)
 
-module.exports.create = function(categoryObject, callback){
-  categoryObject.save(callback)
+module.exports.create = function(articleObject, callback){
+  articleObject.save(callback)
 }
 
-module.exports.deleteAll = function(categoryObject, callback){
-  Category.find({}, callback).remove().exec()
+module.exports.deleteAll = function(articleObject, callback){
+  Article.find({}, callback).remove().exec()
 }
 
-module.exports.deleteOne = function(categoryObject, callback){
-  Category.find({name: categoryObject.name}, callback).remove().exec()
+module.exports.deleteOne = function(articleObject, callback){
+  Article.find({articleId: articleObject.articleId}, callback).remove().exec()
 }
 
-module.exports.getAll = function(categoryObject, callback){
-  Category.find(categoryObject, callback)
+module.exports.getAll = function(articleObject, callback){
+  Article.find(articleObject, callback)
 }
 
-module.exports.getOne = function(categoryObject, callback){
-  Category.findOne({name: categoryObject.name}, callback)
+module.exports.getOne = function(articleObject, callback){
+  Article.findOne({articleId: articleObject.articleId}, callback)
 }

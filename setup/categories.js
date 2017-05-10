@@ -4,24 +4,31 @@ const Category = require('../models/category');
 
 let testCategories = [
   {
+    articles: [],
     categoryId: 0,
     name: "Economics"
   }, {
+    articles: [],
     categoryId: 1,
     name: "Parenting"
   }, {
+    articles: [],
     categoryId: 2,
     name: "Career"
   }, {
+    articles: [],
     categoryId: 3,
     name: "Political"
   }, {
+    articles: [],
     categoryId: 4,
     name: "Finance"
   }, {
+    articles: [],
     categoryId: 5,
     name: "Pets"
   }, {
+    articles: [],
     categoryId: 6,
     name: "Gaming"
   },

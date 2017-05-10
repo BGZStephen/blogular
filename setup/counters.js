@@ -12,6 +12,9 @@ let testCounters = [
   }, {
     name: "articleId",
     count: 0
+  }, {
+    name: "commentId",
+    count: 0
   },
 ]
 
