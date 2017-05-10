@@ -48,6 +48,14 @@ module.exports.getAll = function(articleObject, callback){
   Article.find(articleObject, callback)
 }
 
+module.exports.getByAuthor = function(articleObject, callback){
+  Article.find({author: articleObject.author}, callback)
+}
+
+module.exports.getByUser = function(articleObject, callback){
+  Article.find({createdBy: articleObject.createdBy}, callback)
+}
+
 module.exports.getOne = function(articleObject, callback){
   Article.findOne({articleId: articleObject.articleId}, callback)
 }

@@ -125,6 +125,57 @@ router.post("/getAll", (req, res, next) => {
   })
 })
 
+// get by user
+
+router.post("/getById", (req, res, next) => {
+  let articleObject = {
+    articleId: req.body.articleId
+  }
+
+  Article.getOne(articleObject, (err, callback) => {
+    if(err) throw(err)
+    if(callback) {
+      res.json(callback)
+    } else {
+      res.json({success: false, message: "Article not found (incorrect article ID?)"})
+    }
+  })
+})
+
+// get by user
+
+router.post("/getByUser", (req, res, next) => {
+  let articleObject = {
+    createdBy: req.body.userId
+  }
+
+  Article.getByUser(articleObject, (err, callback) => {
+    if(err) throw(err)
+    if(callback) {
+      res.json(callback)
+    } else {
+      res.json({success: false, message: "Articles not found (no articles?)"})
+    }
+  })
+})
+
+// get by author
+
+router.post("/getByAuthor", (req, res, next) => {
+  let articleObject = {
+    author: req.body.author
+  }
+
+  Article.getByAuthor(articleObject, (err, callback) => {
+    if(err) throw(err)
+    if(callback) {
+      res.json(callback)
+    } else {
+      res.json({success: false, message: "Articles not found (no articles?)"})
+    }
+  })
+})
+
 // update
 router.post("/update", (req, res, next) => {
 
