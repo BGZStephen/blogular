@@ -1,35 +1,29 @@
 const mongoose = require('mongoose');
 const config = require('../config/database')
 const Category = require('../models/category');
+const Counter = require('../models/counter');
 
 let testCategories = [
   {
     articles: [],
-    categoryId: 0,
     name: "Economics"
   }, {
     articles: [],
-    categoryId: 1,
     name: "Parenting"
   }, {
     articles: [],
-    categoryId: 2,
     name: "Career"
   }, {
     articles: [],
-    categoryId: 3,
     name: "Political"
   }, {
     articles: [],
-    categoryId: 4,
     name: "Finance"
   }, {
     articles: [],
-    categoryId: 5,
     name: "Pets"
   }, {
     articles: [],
-    categoryId: 6,
     name: "Gaming"
   },
 ]
@@ -40,17 +34,58 @@ mongoose.connect(config.database)
 // once connected
 mongoose.connection.on("connected", () => {
   console.log("Connected to database: " + config.database)
-  for(let i = 0; i < testCategories.length; i++) {
-    let newCategory = new Category(testCategories[i])
-    Category.create(newCategory, (err, callback) => {
-      if(err) throw(err)
-      if(callback) {
-        console.log("Category Success")
-      } else {
-        console.log("Failed")
+
+  let i = 0;
+
+  let addCategories = () => {
+    if(i < testCategories.length) {
+      // define counter to be called for assigning unique userID's
+      let counter = {
+        name: "categoryId"
       }
-    })
+
+      // create new User based on iteration of test users
+      let newCategory = new Category(testCategories[i])
+
+      // assign a unique ID provided by the counter
+      Counter.getOne(counter, (err, callback) => {
+        if(err) throw(err)
+        if(callback) {
+          newCategory.categoryId = callback.count // assign unique id to new user
+          // check if username already exists
+          Category.getOne({name: newCategory.name}, (err, callback) => {
+            if(err) throw(err)
+            if(callback != null) {
+              console.log("Category already exists")
+            } else {
+              Category.create(newCategory, (err, callback) => {
+                if(err) throw(err)
+                if(callback) {
+                  let newCounterValue = newCategory.categoryId + 1
+                  Counter.increment({name: "categoryId", count: newCounterValue}, (err, callback) => {
+                    if(err) throw(err)
+                    if(callback) {
+                      console.log("Category: " + newCategory.name + " created successfully")
+                      i = i + 1
+                      addCategories()
+                    }
+                  })
+                } else {
+                  console.log("Category creation failed")
+                }
+              })
+            }
+          })
+        } else {
+          console.log("Unable to retrieve counter")
+        }
+      })
+    } else {
+      console.log("Category setup finished")
+      mongoose.disconnect()
+    }
   }
+  addCategories()
 })
 
 // in case of error

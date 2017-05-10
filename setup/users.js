@@ -92,7 +92,7 @@ mongoose.connection.on("connected", () => {
                       Counter.increment({name: "userId", count: newCounterValue}, (err, callback) => {
                         if(err) throw(err)
                         if(callback) {
-                          console.log("User: " + newUser.username + " creation successful")
+                          console.log("User: " + newUser.username + " created successfully")
                           i = i + 1
                           addUsers()
                         }

@@ -11,7 +11,7 @@ const CategorySchema = mongoose.Schema({
   },
   name: {
     type: String,
-    unique: true,
+    unique: true
   }
 });
 
@@ -34,5 +34,5 @@ module.exports.getAll = function(categoryObject, callback){
 }
 
 module.exports.getOne = function(categoryObject, callback){
-  Category.findOne({name: categoryObject.name}, callback)
+  Category.findOne(categoryObject, callback)
 }
