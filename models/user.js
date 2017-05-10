@@ -66,15 +66,7 @@ module.exports.getAll = function(userObject, callback){
   User.find(userObject, callback)
 }
 
-module.exports.getByEmail = function(userObject, callback){
-  User.findOne(userObject, callback)
-}
-
-module.exports.getById = function(userObject, callback) {
-  User.findOne(userObject, callback)
-}
-
-module.exports.getByUsername = function(userObject, callback) {
+module.exports.getOne = function(userObject, callback) {
   User.findOne(userObject, callback)
 }
 

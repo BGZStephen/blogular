@@ -33,7 +33,7 @@ router.post("/authenticate", (req, res, next) => {
     queryPassword: req.body.password,
   }
 
-  User.getByEmail({email: userObject.email}, (err, callback) => {
+  User.getOne({email: userObject.email}, (err, callback) => {
     if(err) throw(err)
     if(callback) {
       userObject.storedHash = callback.password
@@ -129,7 +129,7 @@ router.post("/deleteOne", (req, res, next) => {
     userId: req.body.userId
   }
 
-  User.getById({userId: userObject.userId}, (err, callback) => {
+  User.getOne({userId: userObject.userId}, (err, callback) => {
     if(err) throw(err)
     if(callback != null) {
       User.deleteOne(userObject, (err, callback) => {
@@ -168,7 +168,7 @@ router.post("/getByEmail", (req, res, next) => {
     email: req.body.email
   }
 
-  User.getByEmail(userObject, (err, callback) => {
+  User.getOne({email: userObject.email}, (err, callback) => {
     if(err) throw(err)
     if(callback) {
       res.json({success: true, message: callback})
@@ -183,7 +183,7 @@ router.post("/getById", (req, res, next) => {
     userId: req.body.userId
   }
 
-  User.getById(userObject, (err, callback) => {
+  User.getOne({userId: userObject.userId}, (err, callback) => {
     if(err) throw(err)
     if(callback) {
       res.json(callback)
@@ -200,7 +200,7 @@ router.post("/getByUsername", (req, res, next) => {
     username: req.body.username
   }
 
-  User.getByUsername(userObject, (err, callback) => {
+  User.getOne({username: userObject.username}, (err, callback) => {
     if(err) throw(err)
     if(callback) {
       res.json({success: true, message: callback})
@@ -237,13 +237,13 @@ router.post("/register", (req, res, next) => {
     if(callback) {
       newUser.userId = callback.count // assign unique id to new user
       // check if username already exists
-      User.getByUsername({username: newUser.username}, (err, callback) => {
+      User.getOne({username: newUser.username}, (err, callback) => {
         if(err) throw(err)
         if(callback != null) {
           res.json({success: false, message: "Username already exists"})
         } else {
           // check if email already exists
-          User.getByEmail({email: newUser.email}, (err, callback) => {
+          User.getOne({email: newUser.email}, (err, callback) => {
             if(err) throw(err)
             if(callback !=null) {
               res.json({success: false, message: "Email already exists"})
@@ -288,10 +288,10 @@ router.post("/update", (req, res, next) => {
   }
 
   // check username to make sure it doesn't already exist except in the case of it being the updaters current username
-  User.getByUsername({username: userObject.username}, (err, callback) => {
+  User.getOne({username: userObject.username}, (err, callback) => {
     if(err) throw(err)
     if(callback == null || callback.userId == userObject.userId) {
-      User.getByEmail({email: userObject.email}, (err, callback) => {
+      User.getOne({email: userObject.email}, (err, callback) => {
         if(err) throw(err)
         if(callback == null || callback.userId == userObject.userId) {
           User.updateUser(userObject, (err, callback) => {
@@ -322,7 +322,7 @@ router.post("/updatepassword", (req, res, next) => {
     newPassword: req.body.newPassword
   }
 
-  User.getById({userId: userObject.userId}, (err, callback) => {
+  User.getOne({userId: userObject.userId}, (err, callback) => {
     if(err) throw(err)
     if(callback) {
       userObject.storedHash = callback.password

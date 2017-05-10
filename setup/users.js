@@ -72,13 +72,13 @@ mongoose.connection.on("connected", () => {
         if(callback) {
           newUser.userId = callback.count // assign unique id to new user
           // check if username already exists
-          User.getByUsername({username: newUser.username}, (err, callback) => {
+          User.getOne({username: newUser.username}, (err, callback) => {
             if(err) throw(err)
             if(callback != null) {
               console.log("Username already exists")
             } else {
               // check if email already exists
-              User.getByEmail({email: newUser.email}, (err, callback) => {
+              User.getOne({email: newUser.email}, (err, callback) => {
                 if(err) throw(err)
                 if(callback !=null) {
                   console.log("Email already exists")

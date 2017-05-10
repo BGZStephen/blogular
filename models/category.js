@@ -26,7 +26,7 @@ module.exports.deleteAll = function(categoryObject, callback){
 }
 
 module.exports.deleteOne = function(categoryObject, callback){
-  Category.find({name: categoryObject.name}, callback).remove().exec()
+  Category.findOne(categoryObject, callback).remove().exec()
 }
 
 module.exports.getAll = function(categoryObject, callback){
