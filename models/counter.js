@@ -6,8 +6,7 @@ const config = require('../config/database')
 const CounterSchema = mongoose.Schema({
   name: {
     type: String,
-    unique: true,
-    index: true
+    unique: true
   },
   count: {
     type: Number

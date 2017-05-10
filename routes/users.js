@@ -71,6 +71,7 @@ router.post("/create", (req, res, next) => {
 
   // newUser object to submit
   let newUser = new User({
+    articles: [],
     email: req.body.email,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
@@ -214,6 +215,7 @@ router.post("/register", (req, res, next) => {
 
   // newUser object to submit
   let newUser = new User({
+    articles: [],
     email: req.body.email,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
