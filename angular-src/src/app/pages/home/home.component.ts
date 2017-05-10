@@ -12,4 +12,14 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
   }
 
+  toggleLogin() {
+    let loginContainer = document.getElementsByClassName("login-container")[0]
+    loginContainer.classList.toggle("login-visible")
+  }
+
+  toggleRegister() {
+    let registerContainer = document.getElementsByClassName("register-container")[0]
+    registerContainer.classList.toggle("register-visible")
+  }
+
 }

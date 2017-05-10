@@ -5,8 +5,49 @@
       <h2>The moden day blogging platform</h2>
     </div>
     <div class="action-button-container">
-      <button class="register-button">Register</button>
-      <button class="login-button">Login</button>
+      <button class="register-button" (click)="toggleRegister()">Register</button>
+      <button class="login-button" (click)="toggleLogin()">Login</button>
     </div>
+  </div>
+  <div class="output-container">
+  </div>
+  <div class="login-container">
+    <a class="fa fa-times fa-2x form-toggle" (click)="toggleLogin()"></a>
+    <h3 class="form-header">Login</h3>
+    <form class="login-form">
+      <div class="form-group">
+        <input type="text" class="form-input" placeholder="Email" name="loginEmail" #loginEmail>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-input" placeholder="Password" name="loginPassword" #loginPassword>
+      </div>
+      <div class="form-group button-group">
+        <button class="action-button" >Login</button>
+        <button class="action-button" (click)="toggleLogin()">Cancel</button>
+      </div>
+    </form>
+  </div>
+  <div class="register-container">
+    <a class="fa fa-times fa-2x form-toggle" (click)="toggleRegister()"></a>
+    <h3 class="form-header">Register</h3>
+    <form class="register-form">
+      <div class="form-group">
+        <input type="text" class="form-input name-input" placeholder="First Name" name="firstName" #firstName>
+        <input type="text" class="form-input name-input" placeholder="Last Name" name="lastName" #lastName>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-input" placeholder="Email" name="email" #email>
+      </div>
+      <div class="form-group">
+        <input type="text" class="form-input" placeholder="Username" name="username" #username>
+      </div>
+      <div class="form-group">
+        <input type="password" class="form-input" placeholder="Password" name="password" #password>
+      </div>
+      <div class="form-group button-group">
+        <button class="action-button">Register</button>
+        <button class="action-button" (click)="toggleRegister()">Cancel</button>
+      </div>
+    </form>
   </div>
 </div>

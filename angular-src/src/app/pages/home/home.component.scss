@@ -2,14 +2,15 @@
 
 .main-container {
   background: linear-gradient(
-    rgba(0, 0, 0, 0.55),
-    rgba(0, 0, 0, 0.55)
+    rgba(32, 39, 94, 0.65),
+    rgba(32, 39, 94, 0.65)
   ),
   url('/assets/blogular/images/landing-background.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  position: relative;
   width: 100%;
 }
 
@@ -66,6 +67,82 @@ h2 {
   border-bottom: 4px solid darken(#951924, 10%);
 }
 
+.login-container,
+.register-container {
+  background: $primary-color;
+  min-height: 100vh;
+  position: absolute;
+  top: -100vh;
+  transition: top 0.5s ease;
+  width: 100%;
+  z-index: 100;
+}
+
+.login-visible,
+.register-visible {
+  top: 0;
+}
+
+.login-form,
+.register-form {
+  margin: 10px auto 0;
+  max-width: 100%;
+  padding: 5px 20px;
+  width: 320px;
+}
+
+.form-header {
+  color: #f5f5f5;
+  font-size: 2em;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.form-toggle {
+  color: #f5f5f5;
+  left: 10px;
+  position: relative;
+  top: 5px;
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-input {
+  background: none;
+  border: none;
+  border-bottom: 3px solid #f5f5f5;
+  color: #f5f5f5;
+  font-size: 1.4em;
+  margin: 10px 0;
+  padding: 5px 5px 8px 0;
+  width: 100%;
+}
+
+.form-input::placeholder {
+  color: #f5f5f5;
+}
+
+.action-button {
+  background: #f5f5f5;
+  border: none;
+  color: $primary-color;
+  font-size: 1.4em;
+  font-weight: 900;
+  margin: 15px 0 10px;
+  padding: 15px;
+  width: 100%;
+}
+
+@media (min-width: 540px) {
+  .login-form,
+  .register-form {
+    width: 460px;
+  }
+}
+
 @media (min-width: 768px) {
   h1 {
     color: #f5f5f5;
@@ -103,17 +180,69 @@ h2 {
     font-size: 2em;
   }
 
+  .main-container {
+    background: none;
+    display: flex;
+  }
+
+  .content-container {
+    background: linear-gradient(
+      rgba(32, 39, 94, 0.9),
+      rgba(32, 39, 94, 0.9)
+    ),
+    url('/assets/blogular/images/writing-background.jpg');
+    width: 50%;
+  }
+
   .action-button-container {
     flex-wrap: wrap;
     justify-content: center;
-    width: 50%;
+    width: 100%;
   }
 
   .register-button,
   .login-button {
     font-size: 1.6em;
-    margin: 0 10px;
-    padding: 20px 50px;
+    margin: 0 20px;
+    padding: 15px 30px;
     width: auto;
+  }
+
+  .output-container {
+    background: url('/assets/blogular/images/landing-background.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    width: 50%;
+  }
+
+  .login-container,
+  .register-container {
+    left: -100%;
+    opacity: 0;
+    top: 0;
+    visibility: 0;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    width: 50%;
+  }
+
+  .login-visible,
+  .register-visible {
+    left: 0;
+    opacity: 1;
+    visibility: 1;
+  }
+
+  .form-header {
+    font-size: 2.5em;
+  }
+
+  .button-group {
+    justify-content: space-between;
+  }
+
+  .action-button {
+    margin-top: 20px;
+    width: 48%;
   }
 }
