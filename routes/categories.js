@@ -11,7 +11,7 @@ router.post("/create", (req, res, next) => {
   // newCategory object to submit
   let newCategory = new Category({
     articles: [],
-    name: req.body.name;
+    name: req.body.name
   })
 
   // define counter to be called for assigning unique category ID's
@@ -111,8 +111,8 @@ router.post("/update", (req, res, next) => {
 
   // newUser object to submit
   let categoryObject = {
-    categoryId: req.body.categoryId
-    name: req.body.name;
+    categoryId: req.body.categoryId,
+    name: req.body.name
   }
 
   // check category name to make sure it doesn't already exist except in the case of it being the current category name being updated

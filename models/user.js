@@ -44,6 +44,14 @@ const UserSchema = mongoose.Schema({
 
 const User = module.exports = mongoose.model('User', UserSchema)
 
+module.exports.addArticle = function(userObject, callback) {
+  User.update({userId: userObject.userId}, {$push: {articles: {articleId: userObject.articleId}}}, callback)
+}
+
+module.exports.deleteArticle = function(userObject, callback) {
+  User.update({userId: userObject.userId}, {$pull: {articles: {articleId: userObject.articleId}}}, callback)
+}
+
 module.exports.create = function(userObject, callback) {
   bcrypt.genSalt(10, function(err, salt) {
     bcrypt.hash(userObject.password, salt, function(err, hash) {
@@ -87,5 +95,5 @@ module.exports.updatePassword = function(userObject, callback) {
 }
 
 module.exports.updateUser = function(userObject, callback) {
-  User.update({'userId': userObject.userId}, userObject, callback)
+  User.update({userId: userObject.userId}, userObject, callback)
 }

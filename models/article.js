@@ -6,6 +6,7 @@ const config = require('../config/database')
 const ArticleSchema = mongoose.Schema({
   articleId: {
     type: Number,
+    index: true,
     unique: true
   },
   author: { // username
@@ -19,7 +20,6 @@ const ArticleSchema = mongoose.Schema({
   },
   createdBy: { // userId
     type: Number,
-    unique: true,
   },
   description: {
     type: String,
@@ -40,7 +40,8 @@ module.exports.deleteAll = function(articleObject, callback){
 }
 
 module.exports.deleteOne = function(articleObject, callback){
-  Article.find({articleId: articleObject.articleId}, callback).remove().exec()
+  Article.findOne({articleId: articleObject.articleId}).remove().exec()
+  callback(null, "success")
 }
 
 module.exports.getAll = function(articleObject, callback){
@@ -49,4 +50,8 @@ module.exports.getAll = function(articleObject, callback){
 
 module.exports.getOne = function(articleObject, callback){
   Article.findOne({articleId: articleObject.articleId}, callback)
+}
+
+module.exports.update = function(articleObject, callback){
+  Article.update({articleId: articleObject.articleId}, articleObject, callback)
 }

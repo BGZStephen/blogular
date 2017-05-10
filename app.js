@@ -40,8 +40,12 @@ app.use(bodyParser.json())
 
 // make routes accessible
 const users = require("./routes/users")
+const categories = require("./routes/categories")
+const articles = require("./routes/articles")
 
 app.use('/users', users)
+app.use('/categories', categories)
+app.use('/articles', articles)
 
 // index route
 app.get('/', (req, res) => {
