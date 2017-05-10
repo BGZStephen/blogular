@@ -11,7 +11,7 @@ const Category = require('../models/category');
 
 router.post("/create", (req, res, next) => {
 
-  // newCategory object to submit
+  // newArticle object to submit
   let newArticle = new Article({
     author: req.body.username,
     createdBy: req.body.userId,
@@ -30,14 +30,16 @@ router.post("/create", (req, res, next) => {
   Counter.getOne(counter, (err, callback) => {
     if(err) throw(err)
     if(callback) {
-      newArticle.articleId = callback.count // assign unique id to new user
+      newArticle.articleId = callback.count // assign unique id to new article
       Article.create(newArticle, (err, callback) => {
         if(err) throw(err)
         if(callback) {
+          // add the article to the corresponding creating user
           User.addArticle({userId: newArticle.createdBy, articleId: newArticle.articleId}, (err, callback) => {
             if(err) throw(err)
             if (callback) {
               let newCounterValue = newArticle.articleId + 1
+              // increment the article counter
               Counter.increment({name: "articleId", count: newCounterValue}, (err, callback) => {
                 if(err) throw(err)
                 if(callback) {
@@ -89,6 +91,7 @@ router.post("/deleteOne", (req, res, next) => {
       Article.deleteOne(articleObject, (err, callback) => {
         if(err) throw(err)
         if(callback) {
+          // remove the article from the users array of articles
           User.deleteArticle({userId: articleObject.createdBy, articleId: articleObject.articleId}, (err, callback) => {
             if(err) throw(err)
             if(callback) {
