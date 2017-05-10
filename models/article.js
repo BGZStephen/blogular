@@ -7,7 +7,7 @@ const ArticleSchema = mongoose.Schema({
   articleId: {
     type: Number,
     unique: true
-  }
+  },
   categories: Array,
   name: {
     type: String,

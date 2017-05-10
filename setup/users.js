@@ -1,12 +1,6 @@
 const mongoose = require('mongoose');
-const config = require('./config/database')
-const User = require('./models/user');
-const Counter = require('./models/counter');
-
-let counterObject = new Counter({
-  name: "userId",
-  count: 0
-})
+const config = require('../config/database')
+const User = require('../models/user');
 
 let testUsers = [
   {
@@ -63,14 +57,6 @@ mongoose.connect(config.database)
 // once connected
 mongoose.connection.on("connected", () => {
   console.log("Connected to database: " + config.database)
-  Counter.create(counterObject, (err, callback) => {
-    if(err) throw(err)
-    if(callback) {
-      console.log("Counter Success")
-    } else {
-      console.log("Failed")
-    }
-  })
   for(let i = 0; i < testUsers.length; i++) {
     let newUser = new User(testUsers[i])
     newUser.createdAt = new Date().getTime()
