@@ -1,14 +1,10 @@
 import { Routes, RouterModule } from "@angular/router"
-import { HomeComponent } from "./pages/home/home.component"
-import { LoginComponent } from "./pages/login/login.component"
-import { RegisterComponent } from "./pages/register/register.component"
-import { DashboardComponent } from "./pages/dashboard/dashboard.component"
+import { HomeComponent, DashboardHomeComponent, DashboardAddArticleComponent, BlogIndividualComponent, BlogHomeComponent } from "./pages/pages-barrel"
 
 const APP_ROUTES: Routes = [
   {path: "", component: HomeComponent},
-  {path: "login", component: LoginComponent},
-  {path: "register", component: RegisterComponent},
-  {path: "dashboard", component: DashboardComponent},
+  {path: "dashboard", component: DashboardHomeComponent},
+  {path: "dashboard/article/add", component: DashboardAddArticleComponent},
 ]
 
 export const router = RouterModule.forRoot(APP_ROUTES)

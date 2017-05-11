@@ -6,26 +6,22 @@ import { router } from "./app.routes"
 import { FlashMessagesModule } from "angular2-flash-messages"
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './pages/home/home.component';
-import { DashboardComponent } from './pages/dashboard/dashboard.component';
-import { BlogHomeComponent } from './pages/blog/blog-home.component';
-import { BlogIndividualComponent } from './pages/blog/blog-individual.component';
-import { LoginComponent } from './pages/login/login.component';
-import { RegisterComponent } from './pages/register/register.component';
-import { DashboardNavbarComponent } from './components/dashboard-navbar/dashboard-navbar.component';
-import { DashboardNotificationBarComponent } from './components/dashboard-notification-bar/dashboard-notification-bar.component';
+import { DashboardNavbarComponent, DashboardNotificationBarComponent } from "./components/components-barrel"
+import { HomeComponent, DashboardHomeComponent, BlogIndividualComponent, BlogHomeComponent } from "./pages/pages-barrel"
+import { ArticleAddWidgetComponent } from "./widgets/widget-barrel";
+import { DashboardAddArticleComponent } from './pages/dashboard/dashboard-add-article/dashboard-add-article.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    DashboardComponent,
+    DashboardHomeComponent,
     BlogHomeComponent,
     BlogIndividualComponent,
-    LoginComponent,
-    RegisterComponent,
     DashboardNavbarComponent,
-    DashboardNotificationBarComponent
+    DashboardNotificationBarComponent,
+    ArticleAddWidgetComponent,
+    DashboardAddArticleComponent
   ],
   imports: [
     BrowserModule,

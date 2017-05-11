@@ -17,7 +17,7 @@ export class DashboardNavbarComponent implements OnInit {
 
   menuToggle() {
     if(screen.width > 1024) {
-      return {"min-height": "100vh"}
+      return {"min-height": "calc(100vh - 50px)"}
     }
     let navbar = document.getElementsByClassName("navbar-output-container")[0]
     let height = 45 * (navbar.getElementsByClassName("navbar-top-level-menu")[0].children.length + 1) + "px"

@@ -13,6 +13,12 @@
         </div>
       </li>
       <li class="navbar-top-level-item" >
+        <div class="top-level-item-content" [routerLink]="['/dashboard/']">
+          <a class="fa fa-home"></a>
+          <p class="top-level-item-header">Home</p>
+        </div>
+      </li>
+      <li class="navbar-top-level-item" >
         <div class="top-level-item-content">
           <a class="fa fa-user"></a>
           <p class="top-level-item-header">Profile</p>
@@ -32,7 +38,7 @@
             </div>
           </li>
           <li class="navbar-second-level-item">
-            <div class="second-level-item-content">
+            <div class="second-level-item-content" [routerLink]="['/dashboard/article/add']">
               <a class="fa fa-plus"></a>
               <p class="second-level-item-header">Add</p>
             </div>
