@@ -3,13 +3,19 @@
     <h2 class="logo">Blogular</h2>
     <a class="fa fa-bars navbar-toggle" (click)="menuVisible = !menuVisible"></a>
   </div>
-  <div class="navbar-output-container" [ngStyle]="menuToggle()">
+  <div class="navbar-output-container" (window:resize)="menuToggle()" [ngStyle]="menuToggle()">
     <h3 class="navbar-intro">Navigation</h3>
     <ul class="navbar-top-level-menu">
       <li class="navbar-top-level-item" >
         <div class="top-level-item-content">
           <a class="fa fa-link"></a>
           <p class="top-level-item-header">Visit Blog</p>
+        </div>
+      </li>
+      <li class="navbar-top-level-item" >
+        <div class="top-level-item-content">
+          <a class="fa fa-user"></a>
+          <p class="top-level-item-header">Profile</p>
         </div>
       </li>
       <li class="navbar-top-level-item">
@@ -21,30 +27,14 @@
         <ul class="navbar-second-level-menu" [ngStyle]="subMenuToggle(0)">
           <li class="navbar-second-level-item">
             <div class="second-level-item-content">
-              <a class="fa fa-users"></a>
-              <p class="second-level-item-header">2nd level item</p>
+              <a class="fa fa-cog"></a>
+              <p class="second-level-item-header">Manage</p>
             </div>
           </li>
-        </ul>
-      </li>
-      <li class="navbar-top-level-item" >
-        <div class="top-level-item-content">
-          <a class="fa fa-user"></a>
-          <p class="top-level-item-header">Profile</p>
-          <a class="fa fa-caret-down" ></a>
-        </div>
-      </li>
-      <li class="navbar-top-level-item">
-        <div class="top-level-item-content" (click)="setActiveSubMenu(1)">
-          <a class="fa fa-pencil"></a>
-          <p class="top-level-item-header">Posts</p>
-          <a class="fa fa-caret-down"></a>
-        </div>
-        <ul class="navbar-second-level-menu" [ngStyle]="subMenuToggle(1)">
           <li class="navbar-second-level-item">
             <div class="second-level-item-content">
-              <a class="fa fa-users"></a>
-              <p class="second-level-item-header">2nd level item</p>
+              <a class="fa fa-plus"></a>
+              <p class="second-level-item-header">Add</p>
             </div>
           </li>
         </ul>

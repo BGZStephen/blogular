@@ -25,8 +25,9 @@
 .navbar-toggle {
   color: #f5f5f5;
   font-size: 1.6em;
+  padding: 10px;
   position: absolute;
-  left: 10px;
+  left: 5px;
   @media (min-width: 1024px) {
     display: none;
   }
@@ -39,12 +40,13 @@
   overflow: hidden;
   transition: all 0.3s ease;
   @media (min-width: 1024px) {
-    min-height: calc(100vh - 100px)
+    min-height: calc(100vh - 50px)
   }
 }
 
 .navbar-intro {
   align-items: center;
+  border-bottom: 1px solid darken(#2E363F, 10%);
   color: #aaa;
   display: flex;
   font-style: italic;
@@ -54,24 +56,35 @@
 }
 
 .navbar-top-level-menu {
+  border-bottom: 1px solid lighten(#2E363F, 10%);
   color: #aaa;
   list-style: none;
   width: 100%;
 }
 
-.navbar-top-level-item {
-
-}
-
 .top-level-item-content {
+  border-bottom: 1px solid darken(#2E363F, 10%);
+  border-top: 1px solid lighten(#2E363F, 10%);
   align-items: center;
   display: flex;
   height: 45px;
+  padding-left: 20px;
+  position: relative;
   width: 100%;
 }
 
-.top-level-item-header {
+.top-level-item-content > .fa {
+  margin-right: 15px;
+}
 
+.top-level-item-content:hover {
+  background: $primary-color;
+}
+
+.fa-caret-down {
+  position: absolute;
+  right: -10px;
+  padding: 10px;
 }
 
 // SECOND LEVEL MENU STYLES
@@ -83,15 +96,23 @@
   transition: all 0.3s ease;
 }
 
-.navbar-second-level-item {
-}
-
 .second-level-item-content {
+  border-bottom: 1px solid darken(#2E363F, 10%);
+  border-top: 1px solid lighten(#2E363F, 10%);
+  align-items: center;
+  display: flex;
   height: 45px;
+  padding-left: 20px;
+  position: relative;
+  width: 100%;
 }
 
-.second-level-item-header {
+.second-level-item-content:hover {
+  background: $primary-color;
+}
 
+.second-level-item-content > .fa {
+  margin-right: 15px;
 }
 
 // SECOND LEVEL MENU STYLES END

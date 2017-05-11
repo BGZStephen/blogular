@@ -16,6 +16,9 @@ export class DashboardNavbarComponent implements OnInit {
   activeSubMenu: number = -1;
 
   menuToggle() {
+    if(screen.width > 1024) {
+      return {"min-height": "100vh"}
+    }
     let navbar = document.getElementsByClassName("navbar-output-container")[0]
     let height = 45 * (navbar.getElementsByClassName("navbar-top-level-menu")[0].children.length + 1) + "px"
     if(screen.width < 1024 && this.menuVisible == true) {
