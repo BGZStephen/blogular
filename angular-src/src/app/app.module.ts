@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { router } from "./app.routes"
+import { FlashMessagesModule } from "angular2-flash-messages"
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -30,7 +31,8 @@ import { DashboardNotificationBarComponent } from './components/dashboard-notifi
     BrowserModule,
     FormsModule,
     HttpModule,
-    router
+    router,
+    FlashMessagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

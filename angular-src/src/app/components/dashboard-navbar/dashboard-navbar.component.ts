@@ -12,24 +12,32 @@ export class DashboardNavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  menuVisible: boolean = false;
   activeSubMenu: number = -1;
 
-  toggleMenu() {
+  menuToggle() {
     let navbar = document.getElementsByClassName("navbar-output-container")[0]
-    navbar.classList.toggle("navbar-visible");
+    let height = 45 * (navbar.getElementsByClassName("navbar-top-level-menu")[0].children.length + 1) + "px"
+    if(screen.width < 1024 && this.menuVisible == true) {
+      return {"min-height": height, "max-height": "100vh"}
+    }
   }
 
-  toggleSubMenu(index) {
-    let topMenus = document.getElementsByClassName("navbar-top-level-item")
-    let topMenu = topMenus[index]
-    let subMenu = topMenu.getElementsByTagName("ul")[0]
-
-    if(index == this.activeSubMenu) {
-      subMenu.style.height = "0px";
+  setActiveSubMenu(menuIndex) {
+    if(this.activeSubMenu == menuIndex) {
       this.activeSubMenu = -1
     } else {
-      subMenu.style.height = 45 * (subMenu.children.length) + "px";
-      this.activeSubMenu = index
+      this.activeSubMenu = menuIndex
+    }
+  }
+
+  subMenuToggle(index) {
+    let subMenu = document.getElementsByClassName("navbar-second-level-menu")[0]
+    let height = 45 * subMenu.children.length + "px"
+    if(index == this.activeSubMenu) {
+      return {"height": height}
+    } else {
+      return {"height": "0"}
     }
   }
 }

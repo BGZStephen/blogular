@@ -1,36 +1,50 @@
 <div class="main-container">
   <div class="logo-container">
     <h2 class="logo">Blogular</h2>
-    <a class="fa fa-bars navbar-toggle" (click)="toggleMenu()"></a>
+    <a class="fa fa-bars navbar-toggle" (click)="menuVisible = !menuVisible"></a>
   </div>
-  <div class="navbar-output-container">
+  <div class="navbar-output-container" [ngStyle]="menuToggle()">
     <h3 class="navbar-intro">Navigation</h3>
-    <ul class="navbar-top-level-list">
+    <ul class="navbar-top-level-menu">
       <li class="navbar-top-level-item" >
-        <div class="top-level-item-container">
-          <a class="fa fa-users"></a>
-          <p class="top-level-item-header">Users</p>
-          <a class="fa fa-caret-down" (click)="toggleSubMenu(0)"></a>
+        <div class="top-level-item-content">
+          <a class="fa fa-link"></a>
+          <p class="top-level-item-header">Visit Blog</p>
         </div>
       </li>
       <li class="navbar-top-level-item">
-        <div class="top-level-item-container">
-          <a class="fa fa-book"></a>
-          <p class="top-level-item-header">Blogs</p>
-          <a class="fa fa-caret-down" (click)="toggleSubMenu(1)"></a>
-        </div>
-      </li>
-      <li class="navbar-top-level-item">
-        <div class="top-level-item-container">
+        <div class="top-level-item-content" (click)="setActiveSubMenu(0)">
           <a class="fa fa-pencil"></a>
           <p class="top-level-item-header">Posts</p>
-          <a class="fa fa-caret-down" (click)="toggleSubMenu(2)"></a>
+          <a class="fa fa-caret-down"></a>
         </div>
-        <ul class="navbar-second-level-list">
+        <ul class="navbar-second-level-menu" [ngStyle]="subMenuToggle(0)">
           <li class="navbar-second-level-item">
-            <div class="second-level-item-container">
+            <div class="second-level-item-content">
               <a class="fa fa-users"></a>
-              <p class="second-level-item-header">Posts</p>
+              <p class="second-level-item-header">2nd level item</p>
+            </div>
+          </li>
+        </ul>
+      </li>
+      <li class="navbar-top-level-item" >
+        <div class="top-level-item-content">
+          <a class="fa fa-user"></a>
+          <p class="top-level-item-header">Profile</p>
+          <a class="fa fa-caret-down" ></a>
+        </div>
+      </li>
+      <li class="navbar-top-level-item">
+        <div class="top-level-item-content" (click)="setActiveSubMenu(1)">
+          <a class="fa fa-pencil"></a>
+          <p class="top-level-item-header">Posts</p>
+          <a class="fa fa-caret-down"></a>
+        </div>
+        <ul class="navbar-second-level-menu" [ngStyle]="subMenuToggle(1)">
+          <li class="navbar-second-level-item">
+            <div class="second-level-item-content">
+              <a class="fa fa-users"></a>
+              <p class="second-level-item-header">2nd level item</p>
             </div>
           </li>
         </ul>

@@ -26,102 +26,72 @@
   color: #f5f5f5;
   font-size: 1.6em;
   position: absolute;
-  left: 15px;
+  left: 10px;
   @media (min-width: 1024px) {
     display: none;
   }
 }
 
-.navbar-intro {
-  border-bottom: 1px solid #1f262d;
-  color: #aaa;
-  height: 45px;
-  font-size: 1em;
-  font-style: italic;
-  padding: 10px;
-}
-
 .navbar-output-container {
   background: #2E363F;
-  height: 0;
+  max-height: 0;
   min-height: 0;
-  overflow: scroll;
-  transition: all 0.3s linear;
-  @media(min-width: 1024px) {
-    min-height: calc(100vh - 50px);
-    transition: all 0s linear;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  @media (min-width: 1024px) {
+    min-height: calc(100vh - 100px)
   }
 }
 
-.navbar-output-container::-webkit-scrollbar {
-    display: none;
-}
-
-.navbar-visible {
-  min-height: calc(100vh - 50px);
-}
-
-.navbar-top-level-list {
-
-}
-
-.navbar-top-level-item,
-.navbar-second-level-item {
-  align-items: center;
-  border-top: 1px solid #37414b;
-  border-bottom: 1px solid #1f262d;
-  display: flex;
-  flex-wrap: wrap;
-  height: 45px;
-}
-
-.top-level-item-container,
-.second-level-item-container {
+.navbar-intro {
   align-items: center;
   color: #aaa;
   display: flex;
-  padding: 12px 0;
-  position: relative;
+  font-style: italic;
+  height: 45px;
+  margin-left: 10px;
   width: 100%;
 }
 
-.top-level-item-container:hover,
-.second-level-item-container:hover {
-  background: $primary-color;
-  color: #f5f5f5;
+.navbar-top-level-menu {
+  color: #aaa;
+  list-style: none;
+  width: 100%;
 }
 
-.top-level-item-container > a,
-.second-level-item-container > a {
-  margin: 0 15px;
+.navbar-top-level-item {
+
+}
+
+.top-level-item-content {
+  align-items: center;
+  display: flex;
+  height: 45px;
+  width: 100%;
 }
 
 .top-level-item-header {
 
 }
 
-.fa-caret-down {
-  padding: 10px 10px 10px 20px;
-  position: absolute;
-  right: -10px
-}
+// SECOND LEVEL MENU STYLES
 
-.navbar-second-level-list {
+.navbar-second-level-menu {
   height: 0px;
+  list-style: none;
   overflow: hidden;
   transition: all 0.3s ease;
-  width: 100%;
 }
 
 .navbar-second-level-item {
-  width: 100%;
 }
 
-.second-level-item-container {
-  background: darken(#2E363F, 4%);
-  width: 100%;
+.second-level-item-content {
+  height: 45px;
 }
 
 .second-level-item-header {
 
 }
+
+// SECOND LEVEL MENU STYLES END
