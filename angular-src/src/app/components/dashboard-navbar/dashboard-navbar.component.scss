@@ -1,0 +1,94 @@
+@import "../../sass/_variables";
+
+.main-container {
+  width: 100%;
+  @media (min-width: 1024px) {
+    width: 300px;
+  }
+}
+
+.logo-container {
+  align-items: center;
+  background: $primary-color;
+  display: flex;
+  font-size: 0.9em;
+  height: 50px;
+  justify-content: center;
+  text-align: center;
+}
+
+.logo {
+  color: #f5f5f5;
+}
+
+.navbar-intro {
+  border-bottom: 1px solid #1f262d;
+  color: #aaa;
+  font-size: 1em;
+  font-style: italic;
+  padding: 10px;
+}
+
+.navbar-output-container {
+  background: #2E363F;
+  min-height: 100vh;
+}
+
+.navbar-top-level-list {
+
+}
+
+.navbar-top-level-item,
+.navbar-second-level-item {
+  align-items: center;
+  border-top: 1px solid #37414b;
+  border-bottom: 1px solid #1f262d;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbar-top-level-item:hover,
+.navbar-second-level-item:hover {
+  background: $primary-color;
+}
+
+.top-level-item-container,
+.second-level-item-container {
+  align-items: center;
+  color: #aaa;
+  display: flex;
+  padding: 12px 0;
+  position: relative;
+  width: 100%;
+}
+
+.top-level-item-container > a,
+.second-level-item-container > a {
+  margin: 0 15px;
+}
+
+.top-level-item-header {
+
+}
+
+.fa-caret-down {
+  position: absolute;
+  right: 0;
+}
+
+.navbar-second-level-list {
+  width: 100%;
+}
+
+.navbar-second-level-item {
+  width: 100%;
+}
+
+.second-level-item-container {
+  background: darken(#2E363F, 4%);
+  width: 100%;
+}
+
+.second-level-item-header {
+
+}
