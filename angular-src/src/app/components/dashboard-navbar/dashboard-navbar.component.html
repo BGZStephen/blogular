@@ -7,13 +7,13 @@
     <h3 class="navbar-intro">Navigation</h3>
     <ul class="navbar-top-level-menu">
       <li class="navbar-top-level-item" >
-        <div class="top-level-item-content">
+        <div class="top-level-item-content" [routerLink]="['/blog']">
           <a class="fa fa-link"></a>
           <p class="top-level-item-header">Visit Blog</p>
         </div>
       </li>
       <li class="navbar-top-level-item" >
-        <div class="top-level-item-content" [routerLink]="['/dashboard/']">
+        <div class="top-level-item-content" [routerLink]="['/dashboard']">
           <a class="fa fa-home"></a>
           <p class="top-level-item-header">Home</p>
         </div>

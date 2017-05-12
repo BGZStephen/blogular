@@ -12,6 +12,7 @@ const APP_ROUTES: Routes = [
   {path: "dashboard/articles", component: DashboardManageArticlesComponent},
   {path: "dashboard/profile", component: DashboardProfileComponent},
   {path: "dashboard/profile/edit", component: DashboardProfileEditComponent},
+  {path: "blog", component: BlogHomeComponent},
 ]
 
 export const router = RouterModule.forRoot(APP_ROUTES)
