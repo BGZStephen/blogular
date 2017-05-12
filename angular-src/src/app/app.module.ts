@@ -7,8 +7,10 @@ import { FlashMessagesModule } from "angular2-flash-messages"
 
 import { AppComponent } from './app.component';
 import { DashboardNavbarComponent, DashboardNotificationBarComponent } from "./components/components-barrel"
-import { HomeComponent, DashboardHomeComponent, DashboardAddArticleComponent, DashboardEditArticleComponent, BlogIndividualComponent, BlogHomeComponent } from "./pages/pages-barrel"
-import { ArticleAddWidgetComponent, ArticleEditWidgetComponent } from "./widgets/widget-barrel";
+import { HomeComponent, DashboardHomeComponent, DashboardAddArticleComponent,
+        DashboardEditArticleComponent, DashboardManageArticlesComponent, BlogIndividualComponent,
+        BlogHomeComponent } from "./pages/pages-barrel";
+import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWidgetComponent } from "./widgets/widget-barrel";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ArticleAddWidgetComponent, ArticleEditWidgetComponent } from "./widgets
     ArticleAddWidgetComponent,
     DashboardAddArticleComponent,
     DashboardEditArticleComponent,
-    ArticleEditWidgetComponent
+    ArticleEditWidgetComponent,
+    DashboardManageArticlesComponent,
+    ArticlesManageWidgetComponent
   ],
   imports: [
     BrowserModule,
