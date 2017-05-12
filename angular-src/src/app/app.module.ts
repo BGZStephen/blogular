@@ -9,9 +9,9 @@ import { AppComponent } from './app.component';
 import { DashboardNavbarComponent, DashboardNotificationBarComponent } from "./components/components-barrel"
 import { HomeComponent, DashboardHomeComponent, DashboardAddArticleComponent,
         DashboardEditArticleComponent, DashboardManageArticlesComponent, BlogIndividualComponent,
-        DashboardProfileComponent, BlogHomeComponent } from "./pages/pages-barrel";
+        DashboardProfileComponent, DashboardProfileEditComponent, BlogHomeComponent } from "./pages/pages-barrel";
 import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWidgetComponent,
-        ProfileWidgetComponent } from "./widgets/widget-barrel";
+        ProfileWidgetComponent, ProfileEditWidgetComponent } from "./widgets/widget-barrel";
 
 
 @NgModule({
@@ -30,7 +30,9 @@ import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWi
     DashboardManageArticlesComponent,
     ArticlesManageWidgetComponent,
     ProfileWidgetComponent,
-    DashboardProfileComponent
+    DashboardProfileComponent,
+    DashboardProfileEditComponent,
+    ProfileEditWidgetComponent
   ],
   imports: [
     BrowserModule,

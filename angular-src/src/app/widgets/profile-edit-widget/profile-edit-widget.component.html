@@ -1,0 +1,31 @@
+<div class="main-container">
+  <div class="profile-container">
+    <div class="profile-row">
+      <h2 class="profile-header">Profile > Edit</h2>
+    </div>
+    <div class="profile-row">
+      <p class="profile-label">First Name:</p>
+      <input type="text" class="profile-input" placeholder="First Name" name="firstName" value="Stephen" #firstName>
+    </div>
+    <div class="profile-row">
+      <p class="profile-label">Last Name:</p>
+      <input type="text" class="profile-input" placeholder="Last Name" name="lastName" value="Wright" #lastName>
+    </div>
+    <div class="profile-row">
+      <p class="profile-label">Username:</p>
+      <input type="text" class="profile-input" placeholder="Username" name="username" value="stephen" #username>
+    </div>
+    <div class="profile-row">
+      <p class="profile-label">Email:</p>
+      <input type="text" class="profile-input" placeholder="Email" name="email" value="stephen@test.com" #email>
+    </div>
+    <div class="profile-row">
+      <p class="profile-label">Password:</p>
+      <input type="password" class="profile-input" placeholder="Password" name="password" value="******" #password>
+    </div>
+    <div class="profile-row">
+      <button class="profile-button" [routerLink]="['/dashboard/profile']">Cancel</button>
+      <button class="profile-button profile-submit">Save</button>
+    </div>
+  </div>
+</div>

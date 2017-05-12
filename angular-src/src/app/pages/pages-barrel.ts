@@ -4,5 +4,6 @@ export { DashboardAddArticleComponent } from './dashboard/dashboard-add-article/
 export { DashboardEditArticleComponent } from './dashboard/dashboard-edit-article/dashboard-edit-article.component';
 export { DashboardManageArticlesComponent } from './dashboard/dashboard-manage-articles/dashboard-manage-articles.component';
 export { DashboardProfileComponent } from './dashboard/dashboard-profile/dashboard-profile.component';
+export { DashboardProfileEditComponent } from './dashboard/dashboard-profile-edit/dashboard-profile-edit.component';
 export { BlogHomeComponent } from './blog/blog-home.component';
 export { BlogIndividualComponent } from './blog/blog-individual.component';
