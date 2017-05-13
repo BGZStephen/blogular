@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersApiService } from "../../services/users-api.service"
 
 @Component({
   selector: 'app-profile-edit-widget',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileEditWidgetComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private usersApiService: UsersApiService,
+  ) { }
+
+  user: object;
 
   ngOnInit() {
+    this.usersApiService.getLoggedInUser()
+    .subscribe(res => {
+      this.user = res
+    })
   }
 
 }

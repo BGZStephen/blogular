@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersApiService } from "../../services/users-api.service"
 
 @Component({
   selector: 'app-profile-widget',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileWidgetComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private usersApiService: UsersApiService,
+  ) { }
+
+  user: object;
 
   ngOnInit() {
+    this.usersApiService.getLoggedInUser()
+    .subscribe(res => {
+      this.user = res
+    })
   }
 
 }

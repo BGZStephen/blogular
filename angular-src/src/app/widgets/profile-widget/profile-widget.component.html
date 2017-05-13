@@ -1,28 +1,24 @@
 <div class="main-container">
-  <div class="profile-container">
+  <div class="profile-container" *ngIf="user">
     <div class="profile-row">
       <h2 class="profile-header">Profile</h2>
       <a class="fa fa-pencil" [routerLink]="['edit']"></a>
     </div>
     <div class="profile-row">
       <p class="profile-label">First Name:</p>
-      <p class="profile-output">Stephen</p>
+      <p class="profile-output">{{user.firstName}}</p>
     </div>
     <div class="profile-row">
       <p class="profile-label">Last Name:</p>
-      <p class="profile-output">Wright</p>
+      <p class="profile-output">{{user.lastName}}</p>
     </div>
     <div class="profile-row">
       <p class="profile-label">Username:</p>
-      <p class="profile-output">stephen</p>
+      <p class="profile-output">{{user.username}}</p>
     </div>
     <div class="profile-row">
       <p class="profile-label">Email:</p>
-      <p class="profile-output">stephen@test.com</p>
-    </div>
-    <div class="profile-row">
-      <p class="profile-label">Password:</p>
-      <p class="profile-output">******</p>
+      <p class="profile-output">{{user.email}}</p>
     </div>
   </div>
 </div>

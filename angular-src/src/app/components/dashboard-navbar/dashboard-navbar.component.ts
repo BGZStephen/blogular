@@ -43,7 +43,7 @@ export class DashboardNavbarComponent implements OnInit {
   }
 
   subMenuToggle(index) {
-    let subMenu = document.getElementsByClassName("navbar-second-level-menu")[0]
+    let subMenu = document.getElementsByClassName("navbar-second-level-menu")[index]
     let height = 45 * subMenu.children.length + "px"
     if(index == this.activeSubMenu) {
       return {"height": height}
