@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { router } from "./app.routes"
 import { FlashMessagesModule } from "angular2-flash-messages"
 import { UsersApiService } from "./services/users-api.service"
+import { ArticlesApiService } from "./services/articles-api.service"
 import { AuthGuard } from "./guards/auth.guard"
 
 import { AppComponent } from './app.component';
@@ -43,7 +44,7 @@ import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWi
     router,
     FlashMessagesModule
   ],
-  providers: [UsersApiService, AuthGuard],
+  providers: [UsersApiService, ArticlesApiService, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

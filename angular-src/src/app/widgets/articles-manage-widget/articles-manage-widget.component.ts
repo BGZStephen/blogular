@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ArticlesApiService } from "../../services/articles-api.service"
 
 @Component({
   selector: 'app-articles-manage-widget',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ArticlesManageWidgetComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private articlesApiService: ArticlesApiService
+  ) { }
+
+  articles: Array<object>;
 
   ngOnInit() {
+    this.articlesApiService.getUserArticles()
+    .subscribe(res => {
+      this.articles = res;
+    })
   }
 
 }
