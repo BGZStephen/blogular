@@ -12,7 +12,6 @@
 
 .action-buttons-container {
   align-items: center;
-  color: #bbb;
   display: flex;
   height: 100%;
   margin-left: auto;
@@ -21,8 +20,10 @@
 
 .fa-power-off,
 .fa-user {
+  color: #bbb;
   padding: 10px;
   transition: color 0.3s ease;
+  text-decoration: none;
 }
 
 .fa-power-off:hover {

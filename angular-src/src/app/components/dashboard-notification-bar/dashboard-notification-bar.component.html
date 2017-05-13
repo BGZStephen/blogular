@@ -4,8 +4,8 @@
       <flash-messages></flash-messages>
     </div>
     <div class="action-buttons-container">
-      <a class="fa fa-user"></a>
-      <a class="fa fa-power-off"></a>
+      <a class="fa fa-user" [routerLink]="['/dashboard/profile']"></a>
+      <a class="fa fa-power-off" (click)="logout()"></a>
     </div>
   </div>
 </div>

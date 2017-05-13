@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersApiService } from "../../services/users-api.service"
 
 @Component({
   selector: 'app-dashboard-navbar',
@@ -7,11 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardNavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private usersApiService: UsersApiService
+  ) { }
 
   ngOnInit() {
+    this.usersApiService.getLoggedInUser()
+    .subscribe(res => {
+      this.loggedInUser = res
+    })
   }
 
+  loggedInUser: object;
   menuVisible: boolean = false;
   activeSubMenu: number = -1;
 

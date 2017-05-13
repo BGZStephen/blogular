@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Http } from "@angular/http"
+import { tokenNotExpired } from "angular2-jwt"
 import "rxjs/Rx"
 
 @Injectable()
@@ -12,10 +13,31 @@ export class UsersApiService {
   authToken: any;
   user: any;
 
-
   authenticate(userObject) {
     return this.http.post("http://localhost:3005/users/authenticate", userObject)
     .map(res => res.json())
+  }
+
+  getLoggedInUser() {
+    this.loadToken()
+    let userObject = this.user
+    return this.http.post("http://localhost:3005/users/getById", userObject)
+    .map(res => res.json())
+  }
+
+  loadToken() {
+    this.user = JSON.parse(localStorage.getItem('user'))
+    this.authToken = localStorage.getItem('token')
+  }
+
+  loggedIn() {
+    return tokenNotExpired();
+  }
+
+  logout() {
+    localStorage.clear()
+    this.user = "";
+    this.authToken = "";
   }
 
   registerUser(userObject) {
