@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { router } from "./app.routes"
 import { FlashMessagesModule } from "angular2-flash-messages"
+import { UsersApiService } from "./services/users-api.service"
 
 import { AppComponent } from './app.component';
 import { DashboardNavbarComponent, DashboardNotificationBarComponent } from "./components/components-barrel"
@@ -41,7 +42,7 @@ import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWi
     router,
     FlashMessagesModule
   ],
-  providers: [],
+  providers: [UsersApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

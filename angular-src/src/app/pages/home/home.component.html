@@ -1,4 +1,7 @@
 <div class="main-container">
+  <div class="flash-message-container">
+    <flash-messages></flash-messages>
+  </div>
   <div class="content-container">
     <div class="intro-container">
       <h1>Blogular</h1>
@@ -22,7 +25,7 @@
         <input type="password" class="form-input" placeholder="Password" name="loginPassword" #loginPassword>
       </div>
       <div class="form-group button-group">
-        <button class="action-button" [routerLink]="['/dashboard']">Login</button>
+        <button class="action-button" (click)="login({email: loginEmail.value, password: loginPassword.value})">Login</button>
         <button class="action-button" (click)="toggleLogin()">Cancel</button>
       </div>
     </form>
@@ -32,20 +35,20 @@
     <h3 class="form-header">Register</h3>
     <form class="register-form">
       <div class="form-group">
-        <input type="text" class="form-input name-input" placeholder="First Name" name="firstName" #firstName>
-        <input type="text" class="form-input name-input" placeholder="Last Name" name="lastName" #lastName>
+        <input type="text" class="form-input name-input" placeholder="First Name" name="firstName" #firstName keyup="0">
+        <input type="text" class="form-input name-input" placeholder="Last Name" name="lastName" #lastName keyup="0">
       </div>
       <div class="form-group">
-        <input type="text" class="form-input" placeholder="Email" name="email" #email>
+        <input type="text" class="form-input" placeholder="Email" name="email" #email keyup="0">
       </div>
       <div class="form-group">
-        <input type="text" class="form-input" placeholder="Username" name="username" #username>
+        <input type="text" class="form-input" placeholder="Username" name="username" #username keyup="0">
       </div>
       <div class="form-group">
-        <input type="password" class="form-input" placeholder="Password" name="password" #password>
+        <input type="password" class="form-input" placeholder="Password" name="password" #password keyup="0">
       </div>
       <div class="form-group button-group">
-        <button class="action-button">Register</button>
+        <button class="action-button" (click)="registerUser({firstName: firstName.value, lastName: lastName.value, username: username.value, email: email.value, password: password.value})">Register</button>
         <button class="action-button" (click)="toggleRegister()">Cancel</button>
       </div>
     </form>
