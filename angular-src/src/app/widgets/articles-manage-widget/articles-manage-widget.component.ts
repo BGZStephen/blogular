@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router"
 import { ArticlesApiService } from "../../services/articles-api.service"
 
 @Component({
@@ -9,7 +10,8 @@ import { ArticlesApiService } from "../../services/articles-api.service"
 export class ArticlesManageWidgetComponent implements OnInit {
 
   constructor(
-    private articlesApiService: ArticlesApiService
+    private articlesApiService: ArticlesApiService,
+    private router: Router,
   ) { }
 
   articles: Array<object>;
@@ -18,6 +20,14 @@ export class ArticlesManageWidgetComponent implements OnInit {
     this.articlesApiService.getUserArticles()
     .subscribe(res => {
       this.articles = res;
+    })
+  }
+
+  deleteArticle(articleObject) {
+    this.articlesApiService.deleteArticle(articleObject)
+    .subscribe(res => {
+      console.log(res)
+      this.router.navigate(['/dashboard', {outlets: {'dashboardOut': ['articles']}}]);
     })
   }
 

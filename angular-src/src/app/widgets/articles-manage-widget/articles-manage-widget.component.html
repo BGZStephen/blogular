@@ -6,7 +6,7 @@
       <h3 class="article-title">{{article.title}}</h3>
       <div class="actions-container">
         <a class="fa fa-pencil"></a>
-        <a class="fa fa-trash-o"></a>
+        <a class="fa fa-trash-o" (click)="deleteArticle({userId: article.userId, articleId: article.articleId})"></a>
       </div>
     </div>
   </div>

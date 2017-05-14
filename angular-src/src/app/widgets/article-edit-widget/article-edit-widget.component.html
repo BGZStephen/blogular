@@ -5,7 +5,10 @@
       <input type="text" class="article-edit-input" placeholder="Article Title" name="title" #title>
     </div>
     <div class="form-group">
-      <input type="text" class="article-edit-input" placeholder="Article Image URL (1280 x 720)" name="image" #image>
+      <input type="text" class="article-edit-input" placeholder="Article Image URL (1280 x 720)" name="image" ngModel #image>
+    </div>
+    <div class="article-image-preview" *ngIf="image.value.length > 1">
+      <img class="article-image" [src]="image.value">
     </div>
     <div class="form-group">
       <textarea class="article-edit-area" placeholder="Article Body" name="body" #body></textarea>
