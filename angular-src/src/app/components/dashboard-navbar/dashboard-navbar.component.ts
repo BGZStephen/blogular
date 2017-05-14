@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from "@angular/router"
 import { UsersApiService } from "../../services/users-api.service"
 
 @Component({
@@ -9,7 +10,8 @@ import { UsersApiService } from "../../services/users-api.service"
 export class DashboardNavbarComponent implements OnInit {
 
   constructor(
-    private usersApiService: UsersApiService
+    private usersApiService: UsersApiService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -50,5 +52,9 @@ export class DashboardNavbarComponent implements OnInit {
     } else {
       return {"height": "0"}
     }
+  }
+
+  setOutput(component) {
+      this.router.navigate(['/dashboard', {outlets: {'dashboardOut': [component]}}]);
   }
 }

@@ -20,7 +20,7 @@
       <input type="text" class="profile-input" placeholder="Email" name="email" value="{{user.email}}" #email>
     </div>
     <div class="profile-row">
-      <button class="profile-button" [routerLink]="['/dashboard/profile']">Cancel</button>
+      <button class="profile-button" (click)="setOutput('profile')">Cancel</button>
       <button class="profile-button profile-submit">Save</button>
     </div>
   </div>

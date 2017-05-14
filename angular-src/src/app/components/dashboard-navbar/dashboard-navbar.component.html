@@ -7,9 +7,9 @@
     <h3 class="navbar-intro">Navigation</h3>
     <ul class="navbar-top-level-menu" *ngIf="loggedInUser">
       <li class="navbar-top-level-item" >
-        <div class="top-level-item-content" [routerLink]="['/blog']">
+        <div class="top-level-item-content" [routerLink]="['/blog', loggedInUser.username]">
           <a class="fa fa-link"></a>
-          <p class="top-level-item-header" [routerLink]="['/blog', loggedInUser.username]">Visit Blog</p>
+          <p class="top-level-item-header">Visit Blog</p>
         </div>
       </li>
       <li class="navbar-top-level-item" >
@@ -26,13 +26,13 @@
         </div>
         <ul class="navbar-second-level-menu" [ngStyle]="subMenuToggle(0)">
           <li class="navbar-second-level-item">
-            <div class="second-level-item-content" [routerLink]="['/dashboard/profile']">
+            <div class="second-level-item-content" (click)="setOutput('profile')">
               <a class="fa fa-search"></a>
               <p class="second-level-item-header">View Profile</p>
             </div>
           </li>
           <li class="navbar-second-level-item">
-            <div class="second-level-item-content" [routerLink]="['/dashboard/profile/edit']">
+            <div class="second-level-item-content" (click)="setOutput('profile-edit')">
               <a class="fa fa-cog"></a>
               <p class="second-level-item-header">Edit Profile</p>
             </div>
@@ -53,13 +53,13 @@
         </div>
         <ul class="navbar-second-level-menu" [ngStyle]="subMenuToggle(1)">
           <li class="navbar-second-level-item">
-            <div class="second-level-item-content" [routerLink]="['/dashboard/articles']">
+            <div class="second-level-item-content" (click)="setOutput('articles')">
               <a class="fa fa-cogs"></a>
               <p class="second-level-item-header">Manage</p>
             </div>
           </li>
           <li class="navbar-second-level-item">
-            <div class="second-level-item-content" [routerLink]="['/dashboard/article/add']">
+            <div class="second-level-item-content" (click)="setOutput('article-add')">
               <a class="fa fa-plus"></a>
               <p class="second-level-item-header">Add</p>
             </div>
