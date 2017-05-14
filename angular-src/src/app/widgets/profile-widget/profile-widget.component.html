@@ -2,7 +2,7 @@
   <div class="profile-container" *ngIf="user">
     <div class="profile-row">
       <h2 class="profile-header">Profile</h2>
-      <a class="fa fa-pencil" [routerLink]="['edit']"></a>
+      <a class="fa fa-pencil" (click)="setOutput('profile-edit')"></a>
     </div>
     <div class="profile-row">
       <p class="profile-label">First Name:</p>

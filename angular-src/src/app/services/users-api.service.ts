@@ -52,6 +52,13 @@ export class UsersApiService {
     this.user = userObject.user;
   }
 
+  updateProfile(userObject) {
+    this.loadToken()
+    userObject.userId = this.user.userId
+    return this.http.post("http://localhost:3005/users/update", userObject)
+    .map(res => res.json())
+  }
+
   updatePassword(userObject) {
     this.loadToken()
     userObject.userId = this.user.userId

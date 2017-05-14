@@ -21,7 +21,7 @@
     </div>
     <div class="profile-row">
       <button class="profile-button" (click)="setOutput('profile')">Cancel</button>
-      <button class="profile-button profile-submit">Save</button>
+      <button class="profile-button profile-submit" (click)="updateProfile({firstName: firstName.value, lastName: lastName.value, username: username.value, email: email.value})">Save</button>
     </div>
   </div>
 </div>

@@ -282,7 +282,6 @@ router.post("/update", (req, res, next) => {
     email: req.body.email,
     firstName: req.body.firstName,
     lastName: req.body.lastName,
-    role: req.body.role,
     username: req.body.username,
     userId: req.body.userId
   }
