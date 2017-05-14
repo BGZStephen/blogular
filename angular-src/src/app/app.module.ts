@@ -13,7 +13,7 @@ import { DashboardNavbarComponent, DashboardNotificationBarComponent } from "./c
 import { HomeComponent, DashboardHomeComponent, BlogIndividualComponent,
         BlogHomeComponent } from "./pages/pages-barrel";
 import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWidgetComponent,
-        ProfileWidgetComponent, ProfileEditWidgetComponent } from "./widgets/widget-barrel";
+        ProfileWidgetComponent, ProfileEditWidgetComponent, PasswordEditWidgetComponent } from "./widgets/widget-barrel";
 
 
 @NgModule({
@@ -29,7 +29,8 @@ import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWi
     ArticleEditWidgetComponent,
     ArticlesManageWidgetComponent,
     ProfileWidgetComponent,
-    ProfileEditWidgetComponent
+    ProfileEditWidgetComponent,
+    PasswordEditWidgetComponent
   ],
   imports: [
     BrowserModule,

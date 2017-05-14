@@ -55,6 +55,6 @@ export class DashboardNavbarComponent implements OnInit {
   }
 
   setOutput(component) {
-      this.router.navigate(['/dashboard', {outlets: {'dashboardOut': [component]}}]);
+    this.router.navigate(['/dashboard', {outlets: {'dashboardOut': [component]}}]);
   }
 }
