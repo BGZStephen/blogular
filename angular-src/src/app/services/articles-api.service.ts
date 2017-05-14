@@ -12,6 +12,11 @@ export class ArticlesApiService {
     authToken: any;
     user: any;
 
+    getArticleById(articleObject) {
+      return this.http.post("http://localhost:3005/articles/getById", articleObject)
+      .map(res => res.json())
+    }
+
     getUserArticles() {
       this.loadToken()
       let userObject = this.user

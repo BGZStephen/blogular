@@ -2,7 +2,7 @@
   <div class="articles-container" *ngIf="articles">
     <div class="article" *ngFor="let article of articles">
       <div class="article-title-container">
-        <h2 class="article-title">{{article.title}}</h2>
+        <h2 class="article-title" [routerLink]="['article', article.articleId]">{{article.title}}</h2>
       </div>
       <div class="article-image-container" *ngIf="article.mainImageUrl">
         <img class="article-image" src="{{article.mainImageUrl}}">

@@ -16,7 +16,7 @@ const APP_ROUTES: Routes = [
   ]},
   {path: "blog", component: BlogHomeComponent},
   {path: "blog/:username", component: BlogHomeComponent},
-  {path: "blog/article", component: BlogIndividualComponent},
+  {path: "blog/:username/article/:articleId", component: BlogIndividualComponent},
 ]
 
 export const router = RouterModule.forRoot(APP_ROUTES)
