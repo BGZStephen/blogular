@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from "@angular/router"
 import { ArticlesApiService } from "../../services/articles-api.service"
 
 @Component({
@@ -8,18 +9,24 @@ import { ArticlesApiService } from "../../services/articles-api.service"
 })
 export class BlogHomeComponent implements OnInit {
 
-  constructor(
-    private articlesApiService: ArticlesApiService
-  ) { }
-
   articles: Array<object>;
 
-  ngOnInit() {
-    this.articlesApiService.getUserArticles()
-    .subscribe(res => {
-      this.articles = res
-      console.log(this.articles)
+  constructor(
+    private articlesApiService: ArticlesApiService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.activatedRoute.params
+    .map(params => params['username'])
+    .subscribe((username) => {
+      let userObject = {author: username}
+      this.articlesApiService.getArticlesByAuthor(userObject)
+      .subscribe(res => {
+        this.articles = res
+      })
     })
+  }
+
+  ngOnInit() {
   }
 
   descriptionStyle(article) {

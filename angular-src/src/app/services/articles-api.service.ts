@@ -20,6 +20,11 @@ export class ArticlesApiService {
       .map(res => res.json())
     }
 
+    getArticlesByAuthor(userObject) {
+      return this.http.post("http://localhost:3005/articles/getByAuthor", userObject)
+      .map(res => res.json())
+    }
+
     getArticleById(articleObject) {
       return this.http.post("http://localhost:3005/articles/getById", articleObject)
       .map(res => res.json())
