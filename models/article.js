@@ -24,6 +24,9 @@ const ArticleSchema = mongoose.Schema({
   description: {
     type: String,
   },
+  mainImageUrl: {
+    type: String,
+  },
   title: {
     type: String,
   }

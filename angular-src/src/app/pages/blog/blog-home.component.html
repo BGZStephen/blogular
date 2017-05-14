@@ -1,58 +1,14 @@
 <div class="main-container">
-  <div class="articles-container">
-    <div class="article">
+  <div class="articles-container" *ngIf="articles">
+    <div class="article" *ngFor="let article of articles">
       <div class="article-title-container">
-        <h2 class="article-title">Article Title</h2>
+        <h2 class="article-title">{{article.title}}</h2>
       </div>
-      <div class="article-image-container">
-        <img class="article-image" src="http://placehold.it/1280x720">
+      <div class="article-image-container" *ngIf="article.mainImageUrl">
+        <img class="article-image" src="{{article.mainImageUrl}}">
       </div>
-      <div class="article-description-container">
-        <p class="article-description">Article Info, limited to xxx characters</p>
-      </div>
-    </div>
-    <div class="article">
-      <div class="article-title-container">
-        <h2 class="article-title">Article Title</h2>
-      </div>
-      <div class="article-image-container">
-        <img class="article-image" src="http://placehold.it/1280x720">
-      </div>
-      <div class="article-description-container">
-        <p class="article-description">Article Info, limited to xxx characters</p>
-      </div>
-    </div>
-    <div class="article">
-      <div class="article-title-container">
-        <h2 class="article-title">Article Title</h2>
-      </div>
-      <div class="article-image-container">
-        <img class="article-image" src="http://placehold.it/1280x720">
-      </div>
-      <div class="article-description-container">
-        <p class="article-description">Article Info, limited to xxx characters</p>
-      </div>
-    </div>
-    <div class="article">
-      <div class="article-title-container">
-        <h2 class="article-title">Article Title</h2>
-      </div>
-      <div class="article-image-container">
-        <img class="article-image" src="http://placehold.it/1280x720">
-      </div>
-      <div class="article-description-container">
-        <p class="article-description">Article Info, limited to xxx characters</p>
-      </div>
-    </div>
-    <div class="article">
-      <div class="article-title-container">
-        <h2 class="article-title">Article Title</h2>
-      </div>
-      <div class="article-image-container">
-        <img class="article-image" src="http://placehold.it/1280x720">
-      </div>
-      <div class="article-description-container">
-        <p class="article-description">Article Info, limited to xxx characters</p>
+      <div class="article-description-container" [ngStyle]="descriptionStyle(article)">
+        <p class="article-description">{{article.description}}</p>
       </div>
     </div>
   </div>

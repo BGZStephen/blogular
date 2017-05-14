@@ -15,6 +15,7 @@ router.post("/create", (req, res, next) => {
   let newArticle = new Article({
     author: req.body.username,
     createdBy: req.body.userId,
+    mainImageUrl: req.body.mainImageUrl,
     description: req.body.description,
     title: req.body.title
   })
@@ -183,6 +184,7 @@ router.post("/update", (req, res, next) => {
   let articleObject = {
     articleId: req.body.articleId,
     description: req.body.description,
+    mainImageUrl: req.body.mainImageUrl,
     title: req.body.title
   }
 
