@@ -10,9 +10,8 @@ import { AuthGuard } from "./guards/auth.guard"
 
 import { AppComponent } from './app.component';
 import { DashboardNavbarComponent, DashboardNotificationBarComponent } from "./components/components-barrel"
-import { HomeComponent, DashboardHomeComponent, DashboardAddArticleComponent,
-        DashboardEditArticleComponent, DashboardManageArticlesComponent, BlogIndividualComponent,
-        DashboardProfileComponent, DashboardProfileEditComponent, BlogHomeComponent } from "./pages/pages-barrel";
+import { HomeComponent, DashboardHomeComponent, BlogIndividualComponent,
+        BlogHomeComponent } from "./pages/pages-barrel";
 import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWidgetComponent,
         ProfileWidgetComponent, ProfileEditWidgetComponent } from "./widgets/widget-barrel";
 
@@ -27,14 +26,9 @@ import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWi
     DashboardNavbarComponent,
     DashboardNotificationBarComponent,
     ArticleAddWidgetComponent,
-    DashboardAddArticleComponent,
-    DashboardEditArticleComponent,
     ArticleEditWidgetComponent,
-    DashboardManageArticlesComponent,
     ArticlesManageWidgetComponent,
     ProfileWidgetComponent,
-    DashboardProfileComponent,
-    DashboardProfileEditComponent,
     ProfileEditWidgetComponent
   ],
   imports: [
