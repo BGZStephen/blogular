@@ -12,6 +12,14 @@ export class ArticlesApiService {
     authToken: any;
     user: any;
 
+    createArticle(articleObject) {
+      this.loadToken()
+      articleObject.userId = this.user.userId
+      articleObject.username = this.user.username
+      return this.http.post("http://localhost:3005/articles/create", articleObject)
+      .map(res => res.json())
+    }
+
     getArticleById(articleObject) {
       return this.http.post("http://localhost:3005/articles/getById", articleObject)
       .map(res => res.json())

@@ -5,14 +5,17 @@
       <input type="text" class="article-add-input" placeholder="Article Title" name="title" #title>
     </div>
     <div class="form-group">
-      <input type="text" class="article-add-input" placeholder="Article Image URL (1280 x 720)" name="image" #image>
+      <input type="text" class="article-add-input" placeholder="Article Image URL (1280 x 720)" name="image" ngModel #image>
+    </div>
+    <div class="article-image-preview" *ngIf="image.value.length > 1">
+      <img class="article-image" [src]="image.value">
     </div>
     <div class="form-group">
-      <textarea class="article-add-area" placeholder="Article Body" name="body" #body></textarea>
+      <textarea class="article-add-area" placeholder="Article Body" name="body" value="image.value" #body></textarea>
     </div>
     <div class="form-group">
       <button class="form-button" [routerLink]="['/dashboard/']">Cancel</button>
-      <button class="form-button form-submit">Save</button>
+      <button class="form-button form-submit" (click)="createArticle({title: title.value, description: body.value, mainImageUrl: image.value})">Save</button>
     </div>
   </form>
 </div>
