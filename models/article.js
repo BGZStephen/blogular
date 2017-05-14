@@ -63,6 +63,6 @@ module.exports.getOne = function(articleObject, callback){
   Article.findOne({articleId: articleObject.articleId}, callback)
 }
 
-module.exports.update = function(articleObject, callback){
+module.exports.updateArticle = function(articleObject, callback){
   Article.update({articleId: articleObject.articleId}, articleObject, callback)
 }

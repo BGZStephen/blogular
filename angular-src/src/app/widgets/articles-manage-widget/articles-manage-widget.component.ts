@@ -31,4 +31,8 @@ export class ArticlesManageWidgetComponent implements OnInit {
     })
   }
 
+  setEditArticle(articleId) {
+    this.router.navigate(['/dashboard', {outlets: {'dashboardOut': ['article-edit', articleId]}}]);
+  }
+
 }

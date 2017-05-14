@@ -47,4 +47,9 @@ export class ArticlesApiService {
       this.authToken = localStorage.getItem('token')
     }
 
+    updateArticle(articleObject) {
+      return this.http.post("http://localhost:3005/articles/update", articleObject)
+      .map(res => res.json())
+    }
+
   }

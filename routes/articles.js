@@ -188,20 +188,12 @@ router.post("/update", (req, res, next) => {
     title: req.body.title
   }
 
-  // check category name to make sure it doesn't already exist except in the case of it being the current category name being updated
-  articleObject.getOne({articleId: articleObject.articleId}, (err, callback) => {
+  Article.updateArticle(articleObject, (err, callback) => {
     if(err) throw(err)
-    if(callback == null || callback.articleId == articleId.articleId) {
-      articleObject.update(articleObject, (err, callback) => {
-        if(err) throw(err)
-        if(callback) {
-          res.json({success: true, message: "Article updated successfully"})
-        } else {
-          res.json({success: false, message: "Something went wrong, article update failed"})
-        }
-      })
+    if(callback) {
+      res.json({success: true, message: "Article updated successfully"})
     } else {
-      res.json({success: false, message: "Trying to update an different article (articleID's don't match)"})
+      res.json({success: false, message: "Something went wrong, article update failed"})
     }
   })
 })
