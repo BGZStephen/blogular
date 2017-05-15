@@ -3,6 +3,7 @@
 .main-container {
   width: 100%;
   @media (min-width: 1024px) {
+    position: fixed;
     width: 300px;
   }
 }
@@ -40,7 +41,7 @@
   overflow: hidden;
   transition: all 0.3s ease;
   @media (min-width: 1024px) {
-    min-height: calc(100vh - 50px)
+    min-height: calc(100vh - 50px);
   }
 }
 
@@ -63,9 +64,10 @@
 }
 
 .top-level-item-content {
+  align-items: center;
   border-bottom: 1px solid darken(#2E363F, 10%);
   border-top: 1px solid lighten(#2E363F, 10%);
-  align-items: center;
+  cursor: pointer;
   display: flex;
   height: 45px;
   padding-left: 20px;
@@ -97,9 +99,10 @@
 }
 
 .second-level-item-content {
+  align-items: center;
   border-bottom: 1px solid darken(#2E363F, 10%);
   border-top: 1px solid lighten(#2E363F, 10%);
-  align-items: center;
+  cursor: pointer;
   display: flex;
   height: 45px;
   padding-left: 20px;

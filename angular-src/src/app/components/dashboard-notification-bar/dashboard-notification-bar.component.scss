@@ -1,5 +1,8 @@
 .main-container {
   width: 100%;
+  @media(min-width: 1024px) {
+    padding-bottom: 50px;
+  }
 }
 
 .notification-bar-container {
@@ -8,6 +11,9 @@
   display: flex;
   height: 50px;
   width: 100%;
+  @media(min-width: 1024px) {
+    position: fixed;
+  }
 }
 
 .action-buttons-container {
@@ -16,14 +22,34 @@
   height: 100%;
   margin-left: auto;
   margin-right: 10px;
+  @media(min-width: 1024px) {
+    position: fixed;
+  }
 }
 
 .fa-power-off,
 .fa-user {
   color: #bbb;
+  cursor: pointer;
   padding: 10px;
   transition: color 0.3s ease;
   text-decoration: none;
+  @media(min-width: 1024px) {
+    position: fixed;
+    z-index: 9000;
+  }
+}
+
+.fa-power-off {
+  @media(min-width: 1024px) {
+    right: 10px
+  }
+}
+
+.fa-user {
+  @media(min-width: 1024px) {
+    right: 50px
+  }
 }
 
 .fa-power-off:hover {
