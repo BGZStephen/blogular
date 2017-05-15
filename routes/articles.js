@@ -14,6 +14,7 @@ router.post("/create", (req, res, next) => {
   // newArticle object to submit
   let newArticle = new Article({
     author: req.body.username,
+    categories: req.body.categories,
     createdBy: req.body.userId,
     mainImageUrl: req.body.mainImageUrl,
     description: req.body.description,
@@ -183,6 +184,7 @@ router.post("/update", (req, res, next) => {
   // articleObject object to submit
   let articleObject = {
     articleId: req.body.articleId,
+    categories: req.body.categories,
     description: req.body.description,
     mainImageUrl: req.body.mainImageUrl,
     title: req.body.title

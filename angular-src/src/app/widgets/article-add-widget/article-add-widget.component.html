@@ -13,6 +13,12 @@
     <div class="form-group">
       <textarea class="article-add-area" placeholder="Article Body" name="body" value="image.value" #body></textarea>
     </div>
+    <h3 class="categories-header">Categories</h3>
+    <div class="form-group" *ngIf="categories">
+      <div class="category-button-container" *ngFor="let category of categories; let i = index">
+        <button class="category-button" (click)="setArticleCategory(category.categoryId)" [ngStyle]="setCategoryStyle(category.categoryId)">{{category.name}}</button>
+      </div>
+    </div>
     <div class="form-group">
       <button class="form-button" [routerLink]="['/dashboard/']">Cancel</button>
       <button class="form-button form-submit" (click)="createArticle({title: title.value, description: body.value, mainImageUrl: image.value})">Save</button>

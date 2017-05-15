@@ -3,6 +3,7 @@ const router = express.Router();
 const jwt = require('jsonwebtoken');
 const config = require('../config/database');
 const Counter = require('../models/counter');
+const Category = require('../models/category');
 
 // create category
 
@@ -96,7 +97,7 @@ router.post("/deleteOne", (req, res, next) => {
 router.post("/getAll", (req, res, next) => {
   let categoryObject = {}
 
-  UseCategoryr.getAll(categoryObject, (err, callback) => {
+  Category.getAll(categoryObject, (err, callback) => {
     if(err) throw(err)
     if(callback) {
       res.json(callback)

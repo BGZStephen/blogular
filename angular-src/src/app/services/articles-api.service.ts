@@ -35,6 +35,11 @@ export class ArticlesApiService {
       .map(res => res.json())
     }
 
+    getCategories() {
+      return this.http.post("http://localhost:3005/categories/getAll", {})
+      .map(res => res.json())
+    }
+
     getUserArticles() {
       this.loadToken()
       let userObject = this.user
