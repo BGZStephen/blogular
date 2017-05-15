@@ -2,8 +2,8 @@
 
 .main-container {
   background: linear-gradient(
-    rgba(255, 255, 255, 0.1),
-    rgba(255, 255, 255, 0.1)
+    rgba(0, 0, 0, 0.1),
+    rgba(0, 0, 0, 0.1)
   ),
   url('/assets/blogular/images/dark-background.jpg');
   background-size: 100vw 100vh;
@@ -41,7 +41,7 @@
 
 .article-title-container {
   background: #f5f5f5;
-  padding: 15px 10px;
+  padding-top: 12px;
 }
 
 .article-title {
