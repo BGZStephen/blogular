@@ -7,8 +7,8 @@
       <div class="article-image-container" *ngIf="article.mainImageUrl">
         <img class="article-image" src="{{article.mainImageUrl}}">
       </div>
-      <div class="article-description-container">
-        <p class="article-description">{{article.description}}</p>
+      <div class="article-description-container" [innerHtml]="article.description">
+        <!-- <p class="article-description">{{article.description}}</p> -->
       </div>
     </div>
   </div>

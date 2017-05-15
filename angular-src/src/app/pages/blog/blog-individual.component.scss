@@ -80,3 +80,30 @@
   font-size: 1.4em;
   line-height: 1.8;
 }
+
+// Article Output styles
+
+:host /deep/ h1,
+:host /deep/ h2,
+:host /deep/ h3,
+:host /deep/ h4,
+:host /deep/ h5 {
+  margin: 5px 0 10px 0;
+}
+
+:host /deep/ p {
+  margin-bottom: 10px;
+}
+
+:host /deep/ ul {
+  list-style: circle;
+  margin: 10px 0;
+}
+
+:host /deep/ li {
+  margin-left: 25px;
+}
+
+:host /deep/ a {
+  color: $primary-color;
+}

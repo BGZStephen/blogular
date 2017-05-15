@@ -32,6 +32,8 @@ export class BlogHomeComponent implements OnInit {
   descriptionStyle(article) {
     if(!article.mainImageUrl) {
       return {"width": "100%"}
+    } else if(article.mainImageUrl && screen.width < 768){
+      return {"width": "100%"}
     } else {
       return {"width": "55%"}
     }

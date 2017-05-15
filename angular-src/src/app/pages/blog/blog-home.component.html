@@ -7,8 +7,7 @@
       <div class="article-image-container" *ngIf="article.mainImageUrl">
         <img class="article-image" src="{{article.mainImageUrl}}">
       </div>
-      <div class="article-description-container" [ngStyle]="descriptionStyle(article)">
-        <p class="article-description">{{article.description}}</p>
+      <div class="article-description-container" [innerHtml]="article.description" (window:resize)=descriptionStyle(article) [ngStyle]="descriptionStyle(article)">
       </div>
     </div>
   </div>
