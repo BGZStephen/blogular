@@ -5,3 +5,4 @@ export { ArticlesManageWidgetComponent } from './articles-manage-widget/articles
 export { ProfileWidgetComponent } from './profile-widget/profile-widget.component';
 export { ProfileEditWidgetComponent } from './profile-edit-widget/profile-edit-widget.component';
 export { PasswordEditWidgetComponent } from './password-edit-widget/password-edit-widget.component';
+export { BlogNavbarWidgetComponent } from './blog-navbar-widget/blog-navbar-widget.component';

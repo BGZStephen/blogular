@@ -1,13 +1,12 @@
 <div class="main-container">
+  <app-blog-navbar-widget></app-blog-navbar-widget>
   <div class="articles-container" *ngIf="articles">
     <div class="article" *ngFor="let article of articles">
-      <div class="article-title-container">
-        <h2 class="article-title" [routerLink]="['article', article.articleId]">{{article.title}}</h2>
-      </div>
       <div class="article-image-container" *ngIf="article.mainImageUrl">
         <img class="article-image" src="{{article.mainImageUrl}}">
       </div>
-      <div class="article-description-container" [innerHtml]="article.description" (window:resize)=descriptionStyle(article) [ngStyle]="descriptionStyle(article)">
+      <div class="article-title-container">
+        <h2 class="article-title" [routerLink]="['article', article.articleId]">{{article.title}}</h2>
       </div>
     </div>
   </div>

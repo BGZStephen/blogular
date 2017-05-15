@@ -49,7 +49,8 @@ export class HomeComponent implements OnInit {
     if(this.validate(userObject)) {
       this.usersApiService.registerUser(userObject)
       .subscribe(res => {
-        console.log(res)
+        this.toggleRegister()
+        this.toggleLogin()
       })
     }
   }

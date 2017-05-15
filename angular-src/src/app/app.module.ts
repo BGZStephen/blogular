@@ -14,7 +14,7 @@ import { HomeComponent, DashboardHomeComponent, BlogIndividualComponent,
         BlogHomeComponent } from "./pages/pages-barrel";
 import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWidgetComponent,
         ArticleDeleteWidgetComponent, ProfileWidgetComponent, ProfileEditWidgetComponent,
-        PasswordEditWidgetComponent } from "./widgets/widget-barrel";
+        PasswordEditWidgetComponent, BlogNavbarWidgetComponent } from "./widgets/widget-barrel";
 
 @NgModule({
   declarations: [
@@ -31,7 +31,8 @@ import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWi
     ProfileWidgetComponent,
     ProfileEditWidgetComponent,
     PasswordEditWidgetComponent,
-    ArticleDeleteWidgetComponent
+    ArticleDeleteWidgetComponent,
+    BlogNavbarWidgetComponent
   ],
   imports: [
     BrowserModule,
