@@ -2,13 +2,15 @@ import { AuthGuard } from "./guards/auth.guard"
 import { Routes, RouterModule } from "@angular/router"
 import { HomeComponent, DashboardHomeComponent, BlogIndividualComponent, BlogHomeComponent} from "./pages/pages-barrel"
 import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWidgetComponent,
-        ProfileWidgetComponent, ProfileEditWidgetComponent, PasswordEditWidgetComponent } from "./widgets/widget-barrel"
+        ArticleDeleteWidgetComponent, ProfileWidgetComponent, ProfileEditWidgetComponent,
+        PasswordEditWidgetComponent } from "./widgets/widget-barrel"
 
 const APP_ROUTES: Routes = [
   {path: "", component: HomeComponent},
   {path: "dashboard", component: DashboardHomeComponent, canActivate:[AuthGuard], children: [
     {path: "article-add", component: ArticleAddWidgetComponent, outlet: "dashboardOut", canActivate:[AuthGuard]},
     {path: "article-edit/:articleId", component: ArticleEditWidgetComponent, outlet: "dashboardOut", canActivate:[AuthGuard]},
+    {path: "article-delete/:articleId", component: ArticleDeleteWidgetComponent, outlet: "dashboardOut", canActivate:[AuthGuard]},
     {path: "articles", component: ArticlesManageWidgetComponent, outlet: "dashboardOut", canActivate:[AuthGuard]},
     {path: "password-edit", component: PasswordEditWidgetComponent, outlet: "dashboardOut", canActivate:[AuthGuard]},
     {path: "profile", component: ProfileWidgetComponent, outlet: "dashboardOut", canActivate:[AuthGuard]},

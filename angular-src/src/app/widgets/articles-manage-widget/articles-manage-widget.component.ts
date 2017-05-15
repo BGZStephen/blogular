@@ -23,16 +23,12 @@ export class ArticlesManageWidgetComponent implements OnInit {
     })
   }
 
-  deleteArticle(articleObject) {
-    this.articlesApiService.deleteArticle(articleObject)
-    .subscribe(res => {
-      console.log(res)
-      this.router.navigate(['/dashboard', {outlets: {'dashboardOut': ['articles']}}]);
-    })
-  }
-
   setEditArticle(articleId) {
     this.router.navigate(['/dashboard', {outlets: {'dashboardOut': ['article-edit', articleId]}}]);
+  }
+
+  setDeleteArticle(articleId) {
+    this.router.navigate(['/dashboard', {outlets: {'dashboardOut': ['article-delete', articleId]}}]);
   }
 
 }

@@ -13,8 +13,8 @@ import { DashboardNavbarComponent, DashboardNotificationBarComponent } from "./c
 import { HomeComponent, DashboardHomeComponent, BlogIndividualComponent,
         BlogHomeComponent } from "./pages/pages-barrel";
 import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWidgetComponent,
-        ProfileWidgetComponent, ProfileEditWidgetComponent, PasswordEditWidgetComponent } from "./widgets/widget-barrel";
-
+        ArticleDeleteWidgetComponent, ProfileWidgetComponent, ProfileEditWidgetComponent,
+        PasswordEditWidgetComponent } from "./widgets/widget-barrel";
 
 @NgModule({
   declarations: [
@@ -30,7 +30,8 @@ import { ArticleAddWidgetComponent, ArticleEditWidgetComponent, ArticlesManageWi
     ArticlesManageWidgetComponent,
     ProfileWidgetComponent,
     ProfileEditWidgetComponent,
-    PasswordEditWidgetComponent
+    PasswordEditWidgetComponent,
+    ArticleDeleteWidgetComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,10 @@
+<div class="main-container">
+  <h2 class="article-delete-header">Manage Articles > Delete Article</h2>
+  <div class="confirmation-container" *ngIf="article">
+    <p>Are you sure you want to delete {{article.title}}?</p>
+    <div class="confirmation-action-container">
+      <button class="confirmation-button" (click)="setOutput('articles')">Cancel</button>
+      <button class="confirmation-button delete-button" (click)="deleteArticle({articleId: article.articleId})">Delete</button>
+    </div>
+  </div>
+</div>
