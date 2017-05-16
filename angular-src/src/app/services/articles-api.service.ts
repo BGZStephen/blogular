@@ -16,34 +16,34 @@ export class ArticlesApiService {
       this.loadToken()
       articleObject.userId = this.user.userId
       articleObject.username = this.user.username
-      return this.http.post("http://localhost:3005/articles/create", articleObject)
+      return this.http.post("articles/create", articleObject)
       .map(res => res.json())
     }
 
     deleteArticle(articleObject) {
-      return this.http.post("http://localhost:3005/articles/deleteOne", articleObject)
+      return this.http.post("articles/deleteOne", articleObject)
       .map(res => res.json())
     }
 
     getArticlesByAuthor(userObject) {
-      return this.http.post("http://localhost:3005/articles/getByAuthor", userObject)
+      return this.http.post("articles/getByAuthor", userObject)
       .map(res => res.json())
     }
 
     getArticleById(articleObject) {
-      return this.http.post("http://localhost:3005/articles/getById", articleObject)
+      return this.http.post("articles/getById", articleObject)
       .map(res => res.json())
     }
 
     getCategories() {
-      return this.http.post("http://localhost:3005/categories/getAll", {})
+      return this.http.post("categories/getAll", {})
       .map(res => res.json())
     }
 
     getUserArticles() {
       this.loadToken()
       let userObject = this.user
-      return this.http.post("http://localhost:3005/articles/getByUser", userObject)
+      return this.http.post("articles/getByUser", userObject)
       .map(res => res.json())
     }
 
@@ -53,7 +53,7 @@ export class ArticlesApiService {
     }
 
     updateArticle(articleObject) {
-      return this.http.post("http://localhost:3005/articles/update", articleObject)
+      return this.http.post("articles/update", articleObject)
       .map(res => res.json())
     }
 

@@ -14,14 +14,14 @@ export class UsersApiService {
   user: any;
 
   authenticate(userObject) {
-    return this.http.post("http://localhost:3005/users/authenticate", userObject)
+    return this.http.post("users/authenticate", userObject)
     .map(res => res.json())
   }
 
   getLoggedInUser() {
     this.loadToken()
     let userObject = this.user
-    return this.http.post("http://localhost:3005/users/getById", userObject)
+    return this.http.post("users/getById", userObject)
     .map(res => res.json())
   }
 
@@ -41,7 +41,7 @@ export class UsersApiService {
   }
 
   registerUser(userObject) {
-    return this.http.post("http://localhost:3005/users/register", userObject)
+    return this.http.post("users/register", userObject)
     .map(res => res.json())
   }
 
@@ -55,14 +55,14 @@ export class UsersApiService {
   updateProfile(userObject) {
     this.loadToken()
     userObject.userId = this.user.userId
-    return this.http.post("http://localhost:3005/users/update", userObject)
+    return this.http.post("users/update", userObject)
     .map(res => res.json())
   }
 
   updatePassword(userObject) {
     this.loadToken()
     userObject.userId = this.user.userId
-    return this.http.post("http://localhost:3005/users/updatePassword", userObject)
+    return this.http.post("users/updatePassword", userObject)
     .map(res => res.json())
   }
 

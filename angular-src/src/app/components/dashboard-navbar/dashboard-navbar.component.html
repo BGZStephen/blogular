@@ -5,9 +5,9 @@
   </div>
   <div class="navbar-output-container" (window:resize)="menuToggle()" [ngStyle]="menuToggle()">
     <h3 class="navbar-intro">Navigation</h3>
-    <ul class="navbar-top-level-menu" *ngIf="loggedInUser">
+    <ul class="navbar-top-level-menu">
       <li class="navbar-top-level-item" >
-        <div class="top-level-item-content" [routerLink]="['/blog', loggedInUser.username]">
+        <div class="top-level-item-content" *ngIf="loggedInUser" [routerLink]="['/blog', loggedInUser.username]">
           <a class="fa fa-link"></a>
           <p class="top-level-item-header">Visit Blog</p>
         </div>
